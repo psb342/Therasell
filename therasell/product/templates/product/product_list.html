@@ -1,9 +1,25 @@
 <html>
     <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <title>TheraSell</title>
     </head>
     <body>
         <p>Hi there!</p>
         <p>It works!</p>
+    {% for product in products %}
+        <div>
+            <p>author: {{ product.author }}</p>
+            <h2><a href="">{{ product.title }}</a></h2>
+
+        </div>
+    {% endfor %}
+
+        {% load bootstrap4 %}
+   
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {% endbuttons %}
+    </form>
     </body>
 </html>
