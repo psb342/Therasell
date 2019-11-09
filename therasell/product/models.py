@@ -9,6 +9,7 @@ class Product(models.Model):
     product_id = models.IntegerField(primary_key = True)
     product_description = models.TextField()
     title = models.CharField(max_length=200)
+    Image = models.TextField(null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 

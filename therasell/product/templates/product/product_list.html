@@ -4,34 +4,36 @@
     <head>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <title>TheraSell</title>
     </head>
     <body>
 
-           
-    
-           
-    {% for product in products %}
-        <div class="card" style="margin-top: 50px;width: 18rem;height: 200px; background-color: rgb(222, 174, 135);">
-            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{ product.title }}</h5>
-              <p class="card-text">Owner : {{ product.author }}</p>
-              <a href="#" class="btn btn-primary">View Details</a>
-              
+     <div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+        {% for product in products %}
+        <div class="col-auto mb-3">
+            <div class="card" style="width: 18rem;">
+                 <img class="card-img-top" src="data:image/jpeg;base64,{{ product.Image }}" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Price : ${{ product.Price }}</h6>
+                    <p class="card-text"> {{product.product_description}}</p>
+                    <!-- <a href="#" class="card-link">Card link</a> -->
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
             </div>
         </div>
-    {% endfor %}
-    
+      {% endfor %}
+    </div>
+</div>
 
 
-
-        
     {% load bootstrap4 %}
-   
+
     {% buttons %}
         <button type="submit" class="btn btn-primary">Submit</button>
     {% endbuttons %}
-    
+
     </body>
 </html>
