@@ -4,9 +4,10 @@
   <title>TheraSELL</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
     .navbar {
@@ -30,66 +31,188 @@
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>TheraSELL</h1>      
+    <h1><font color = "blue">Thera</font><font color = "red">SELL</font></h1>      
     <p>The place to buy & sell used therapeutic equipment & share advice</p>
   </div>
 </div>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Deals</a></li>
-        <li><a href="#">Stores</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      </ul>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">About Us</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Products <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Account
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#">My Orders</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Settings</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sign In</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
 </nav>
+<div class="row">
+	<aside class="col-sm-4">
+<p>Filter</p>
 
-<div class="container">    
-        <div class="row">
+
+<div class="card" style = "width:18rem;;">
+	<article class="card-group-item">
+		<header class="card-header">
+			<h6 class="title">Brands </h6>
+		</header>
+		<div class="filter-content">
+			<div class="card-body">
+			<form>
+				<label class="form-check">
+				  <input class="form-check-input" type="checkbox" value="">
+				  <span class="form-check-label">
+				    abc
+				  </span>
+				</label> <!-- form-check.// -->
+				<label class="form-check">
+				  <input class="form-check-input" type="checkbox" value="">
+				  <span class="form-check-label">
+				    xyz
+				  </span>
+				</label>  <!-- form-check.// -->
+				<label class="form-check">
+				  <input class="form-check-input" type="checkbox" value="">
+				  <span class="form-check-label">
+				    Another Brand
+				  </span>
+				</label>  <!-- form-check.// -->
+			</form>
+
+			</div> <!-- card-body.// -->
+		</div>
+	</article> <!-- card-group-item.// -->
+	
+	<article class="card-group-item">
+		<header class="card-header">
+			<h6 class="title">Choose type </h6>
+		</header>
+		<div class="filter-content">
+			<div class="card-body">
+			<label class="form-check">
+			  <input class="form-check-input" type="radio" name="exampleRadio" value="">
+			  <span class="form-check-label">
+			    First hand items
+			  </span>
+			</label>
+			<label class="form-check">
+			  <input class="form-check-input" type="radio" name="exampleRadio" value="">
+			  <span class="form-check-label">
+			    Brand new items
+			  </span>
+			</label>
+			<label class="form-check">
+			  <input class="form-check-input" type="radio" name="exampleRadio" value="">
+			  <span class="form-check-label">
+			    Some other option
+			  </span>
+			</label>
+			</div> <!-- card-body.// -->
+		</div>
+  </article> <!-- card-group-item.// -->
+  
+  <article class="card-group-item">
+		<header class="card-header">
+			<h6 class="title">Price Range </h6>
+		</header>
+		<div class="filter-content">
+			<div class="card-body">
+			<div class="form-row">
+			<div class="form-group col-md-6">
+			  <label>Min</label>
+			  <input type="number" class="form-control" id="inputEmail4" placeholder="$0">
+			</div>
+			<div class="form-group col-md-6 text-right">
+			  <label>Max</label>
+			  <input type="number" class="form-control" placeholder="$1,0000">
+			</div>
+			</div>
+			</div> <!-- card-body.// -->
+		</div>
+	</article> <!-- card-group-item.// -->
+</div> <!-- card.// -->
+
+
+
+
+	</aside> <!-- col.// -->
+	<aside class="col-sm-4">
+
+
+
+<div class="card" style = "width: 75rem;">
+	<article class="card-group-item">
+	 
+        
                 
                     
-<div class="container-fluid mt-4">
-        <div class="row justify-content-center">
-            {% for product in products %}
-            <div class="col-sm-4">
-            <div class="col-auto mb-3">
-                <div class="card" style="width: 18rem;">
-                     <img class="card-img-top" src="data:image/jpeg;base64,{{ product.Image }}" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.title }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Price : ${{ product.Price }}</h6>
-                        <p class="card-text"> {{product.product_description}}</p>
-                        <!-- <a href="#" class="card-link">Card link</a> -->
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-          {% endfor %}
-        </div>
-    </div>
-        
-</div>
-    
-</div>
-</div><br><br>
+     
+              <div class="row justify-content-center">
+                  {% for product in products %}
+                  <div class="col-sm-4">
+                  <div class="col-auto mb-3">
+                      <div class="card" style="width: 15rem;">
+                           <img class="card-img-top" src="data:image/jpeg;base64,{{ product.Image }}" alt="Card image" style="width:100%">
+                          <div class="card-body">
+                              <h5 class="card-title">{{ product.title }}</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">Price : ${{ product.Price }}</h6>
+                              <p class="card-text"> {{product.product_description}}</p>
+                              <!-- <a href="#" class="card-link">Card link</a> -->
+                              <a href="#" class="btn btn-primary">View Details</a>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                {% endfor %}
+              </div>
+
+          
+      </div><br><br>
+	</article> <!-- card-group-item.// -->
+	<article class="card-group-item">
+		<ul class="pagination">
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+    </ul>
+	</article> <!-- card-group-item.// -->
+</div> <!-- card.// -->
+
+
+
+	</aside> <!-- col.// -->
+
+
 
 <footer class="container-fluid text-center">
   <p>Copyright</p>  
