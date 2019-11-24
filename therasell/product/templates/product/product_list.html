@@ -11,7 +11,7 @@
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
     .navbar {
-      margin-bottom: 50px;
+      /*margin-bottom: 50px;*/
       border-radius: 0;
     }
     
@@ -25,17 +25,78 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
+
+    #footersubscribe {
+      display: block;
+    }
+
+    .carousel-inner > .carousel-item > img {
+    margin: 0 auto;
+    width:50%;
+    max-height: 500px !important;
+}
+
+/* Carousel css start */
+.carousel-item {
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+/* Carousel css end */
+
+#footer{
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
   </style>
 </head>
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1><font color = "blue">Thera</font><font color = "red">SELL</font></h1>      
-    <p>The place to buy & sell used therapeutic equipment & share advice</p>
-  </div>
-</div>
+  <!-- Carousel Start-->
+{% load staticfiles %}
+<div id="demo" class="carousel slide" data-ride="carousel" data-interval="10000">
 
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+    </ul>
+  
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+         <img src="{% static 'images/image1.jpg' %}" alt="Image1"></img>
+         <div class="carousel-caption">
+            <h3>The place to buy and sell used therapeutic equipment</h3>
+          </div>
+      </div>
+      <div class="carousel-item">
+          <img src="{% static 'images/image2.jpg' %}" alt="Image2"></img>
+          <div class="carousel-caption">
+              <h3>Helping each other sale by sale</h3>
+            </div>
+      </div>
+    </div>
+  
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+<!-- Carousel End-->
+
+<!-- Navbar start-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">About Us</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,6 +135,8 @@
     </form>
   </div>
 </nav>
+<!-- Navbar end-->
+
 <div class="row">
 	<aside class="col-sm-4">
 <p>Filter</p>
@@ -183,7 +246,8 @@
                            <img class="card-img-top" src="data:image/jpeg;base64,{{ product.Image }}" alt="Card image" style="width:100%">
                           <div class="card-body">
                               <h5 class="card-title">{{ product.title }}</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Price : ${{ product.Price }}</h6>
+                              <!-- h6 class="card-subtitle mb-2 text-muted">Price : ${{ product.Price }}</h6-->
+                              <h6 class="card-subtitle mb-2 text-muted">Price : 100</h6>
                               <p class="card-text"> {{product.product_description}}</p>
                               <!-- <a href="#" class="card-link">Card link</a> -->
                               <a href="#" class="btn btn-primary">View Details</a>
@@ -215,8 +279,8 @@
 
 
 <footer class="container-fluid text-center">
-  <p>Copyright</p>  
-  <form class="form-inline">Get deals:
+    <small>&copy; Copyright 2019, ThreaSELL</small>
+  <form class="form-inline" id="footersubscribe">Get deals:
     <input type="email" class="form-control" size="50" placeholder="Email Address">
     <button type="button" class="btn btn-danger">Sign Up</button>
   </form>

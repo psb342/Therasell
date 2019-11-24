@@ -12,7 +12,7 @@ class Product(models.Model):
     Image = models.TextField(null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-    price = models.DecimalField(max_digits=8, decimal_places=2,default=0)
+
 
     def publish(self):
         self.published_date = timezone.now()
@@ -20,4 +20,3 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
-

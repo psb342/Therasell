@@ -20,7 +20,7 @@ def product_list(request):
           'title': product.title,
           'product_description': product.product_description,
           'Image' : base64.b64encode(product.Image).decode(),
-          'Price' : product.Price
+          'Price' : '100'
         }
         products_arr.append(product_obj)
     return render(request, 'product/product_list.html', {'products': products_arr})
