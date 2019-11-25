@@ -136,13 +136,14 @@
   </div>
 </nav>
 <!-- Navbar end-->
-
+<div class = "container-fluid">
 <div class="row">
-	<aside class="col-sm-4">
+	<aside class="col-sm-2">
 <p>Filter</p>
 
 
-<div class="card" style = "width:18rem;;">
+<div class="card" style = "width:16rem;">
+
 	<article class="card-group-item">
 		<header class="card-header">
 			<h6 class="title">Brands </h6>
@@ -220,7 +221,8 @@
 			</div>
 			</div> <!-- card-body.// -->
 		</div>
-	</article> <!-- card-group-item.// -->
+  </article> <!-- card-group-item.// -->
+  
 </div> <!-- card.// -->
 
 
@@ -231,17 +233,15 @@
 
 
 
-<div class="card" style = "width: 75rem;">
+<div class="card" style = "width: 98rem;">
+
+ 
 	<article class="card-group-item">
 	 
-        
-                
-                    
-     
               <div class="row justify-content-center">
                   {% for product in products %}
-                  <div class="col-sm-4">
-                  <div class="col-auto mb-3">
+                  <div class="col-sm-3">
+                  <div class="col-auto mb-2">
                       <div class="card" style="width: 15rem;">
                            <img class="card-img-top" src="data:image/jpeg;base64,{{ product.Image }}" alt="Card image" style="width:100%">
                           <div class="card-body">
@@ -260,7 +260,8 @@
 
           
       </div><br><br>
-	</article> <!-- card-group-item.// -->
+  </article> <!-- card-group-item.// -->
+  
 	<article class="card-group-item">
 		<ul class="pagination">
       <li><a href="#">1</a></li>
@@ -272,10 +273,11 @@
 	</article> <!-- card-group-item.// -->
 </div> <!-- card.// -->
 
-
+</div>
 
 	</aside> <!-- col.// -->
-
+</div>
+</div>
 
 
 <footer class="container-fluid text-center">
