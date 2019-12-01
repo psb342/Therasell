@@ -12,6 +12,8 @@ class Product(models.Model):
     Image = models.TextField(null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    category = models.TextField()
+    price = models.IntegerField()
 
 
     def publish(self):
