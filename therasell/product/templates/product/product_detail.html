@@ -1,0 +1,11 @@
+{% block content %}
+    <div class="product">
+        {% if product.published_date %}
+            <div class="date">
+                {{ product.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
