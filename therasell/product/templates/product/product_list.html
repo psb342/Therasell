@@ -106,20 +106,33 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Products <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">How it works <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
+        <a class="nav-link" href="#">List a product</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          My Account
+          Category
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Profile</a>
-          <a class="dropdown-item" href="#">My Orders</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="#" type="search">Pediatric</a>
+          <a class="dropdown-item" href="#">Geriatric</a>
+          <a class="dropdown-item" href="#">Sports injury</a>
+          <a class="dropdown-item" href="#">Sensory</a>
+          <a class="dropdown-item" href="#">Gross Motor</a>
+          <a class="dropdown-item" href="#">Fine motor</a>
+          <a class="dropdown-item" href="#">Wheel chairs</a>
+          <a class="dropdown-item" href="#">Mobility (walkers, Canes, crawlers, ramps)</a>
+          <a class="dropdown-item" href="#">Walkers and Fall Safety</a>
+          <a class="dropdown-item" href="#">Splints and braces</a>
+          <a class="dropdown-item" href="#">Activities of daily living</a>
+          <a class="dropdown-item" href="#">Durable medical equipment</a>
+          <a class="dropdown-item" href="#">Rehabilitation and Physical Therapy</a>
+          <a class="dropdown-item" href="#">Visual Motor/Visual Perceptual</a>
+          <a class="dropdown-item" href="#">Assessments</a>
+         <!--  <div class="dropdown-divider"></div>
+         <a class="dropdown-item" href="#">Settings</a> -->
         </div>
       </li>
       <li class="nav-item">
@@ -139,91 +152,7 @@
 <div class = "container-fluid">
 <div class="row">
 	<aside class="col-sm-2">
-<p>Filter</p>
 
-
-<div class="card" style = "width:16rem;">
-
-	<article class="card-group-item">
-		<header class="card-header">
-			<h6 class="title">Brands </h6>
-		</header>
-		<div class="filter-content">
-			<div class="card-body">
-			<form>
-				<label class="form-check">
-				  <input class="form-check-input" type="checkbox" value="">
-				  <span class="form-check-label">
-				    abc
-				  </span>
-				</label> <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" type="checkbox" value="">
-				  <span class="form-check-label">
-				    xyz
-				  </span>
-				</label>  <!-- form-check.// -->
-				<label class="form-check">
-				  <input class="form-check-input" type="checkbox" value="">
-				  <span class="form-check-label">
-				    Another Brand
-				  </span>
-				</label>  <!-- form-check.// -->
-			</form>
-
-			</div> <!-- card-body.// -->
-		</div>
-	</article> <!-- card-group-item.// -->
-	
-	<article class="card-group-item">
-		<header class="card-header">
-			<h6 class="title">Choose type </h6>
-		</header>
-		<div class="filter-content">
-			<div class="card-body">
-			<label class="form-check">
-			  <input class="form-check-input" type="radio" name="exampleRadio" value="">
-			  <span class="form-check-label">
-			    First hand items
-			  </span>
-			</label>
-			<label class="form-check">
-			  <input class="form-check-input" type="radio" name="exampleRadio" value="">
-			  <span class="form-check-label">
-			    Brand new items
-			  </span>
-			</label>
-			<label class="form-check">
-			  <input class="form-check-input" type="radio" name="exampleRadio" value="">
-			  <span class="form-check-label">
-			    Some other option
-			  </span>
-			</label>
-			</div> <!-- card-body.// -->
-		</div>
-  </article> <!-- card-group-item.// -->
-  
-  <article class="card-group-item">
-		<header class="card-header">
-			<h6 class="title">Price Range </h6>
-		</header>
-		<div class="filter-content">
-			<div class="card-body">
-			<div class="form-row">
-			<div class="form-group col-md-6">
-			  <label>Min</label>
-			  <input type="number" class="form-control" id="inputEmail4" placeholder="$0">
-			</div>
-			<div class="form-group col-md-6 text-right">
-			  <label>Max</label>
-			  <input type="number" class="form-control" placeholder="$1,0000">
-			</div>
-			</div>
-			</div> <!-- card-body.// -->
-		</div>
-  </article> <!-- card-group-item.// -->
-  
-</div> <!-- card.// -->
 
 
 
@@ -245,12 +174,11 @@
                       <div class="card" style="width: 15rem;">
                            <img class="card-img-top" src="data:image/jpeg;base64,{{ product.Image }}" alt="Card image" style="width:100%">
                           <div class="card-body">
-                              <h5 class="card-title">{{ product.title }}</h5>
+                              <h5 class="card-title"><a href="{% url 'product_detail' pk=product.product_id %}">{{ product.title }}</a></h5>
                               <!-- h6 class="card-subtitle mb-2 text-muted">Price : ${{ product.Price }}</h6-->
-                              <h6 class="card-subtitle mb-2 text-muted">Price : 100</h6>
+                              <h6 class="card-subtitle mb-2 text-muted">{{product.price}}</h6>
                               <p class="card-text"> {{product.product_description}}</p>
-                              <!-- <a href="#" class="card-link">Card link</a> -->
-                              <a href="#" class="btn btn-primary">View Details</a>
+                             
                           </div>
                       </div>
                   </div>
