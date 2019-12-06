@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 #from django.utils import timezone
 from .models import Product
+from .forms import ListForm
 import base64
 #import range
 
@@ -32,4 +33,8 @@ def product_list(request):
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'product/product_detail.html', {'product': product})
+
+def list_new(request):
+    form=ListForm()
+    return render(request,'product/list_product.html',{'form':form})
   
