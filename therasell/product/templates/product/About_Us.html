@@ -1,12 +1,13 @@
-<html>
-    
-    <body>
+{% extends 'product/base.html' %}
 
+{% block content %}
+
+<br><br><br><br>
         <div>
-            <h1><a href="/">About Us</a></h1>
+            <h1>About Us</h1>
         </div>
-
-
+<br>
+        <div style = "width: 70rem;">
         <p>The founder of TheraSELL is an Occupational Therapist who has been working with special needs children for over a decade.  She is currently an OT at The Yaldeinu School in Brooklyn, NY. 
            One weekend a client of hers was trying to "get rid" of a $175 dollar Astronaut spinning board and a relative with a special needs son casually said she threw out a few hundred dollars of therapeutic listening equipment!
            She personally know parents who opted out of these programs secondary to the expense! It was an AHHA moment and TheraSELL Was born.</p>
@@ -24,6 +25,5 @@
            
         <p>Therapists, caretakers, caregivers  and consumers sell your gently used therapy and medical equipment to buyers in your neighborhood or ship it to areas further! Free up your space and turn your assets back into cash!</p>
                 
-        
-    </body>
-</html>
+        </div>
+        {% endblock %}

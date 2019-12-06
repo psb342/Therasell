@@ -36,4 +36,7 @@ def product_detail(request, pk):
 
 def about_us(request):
     return render(request, 'product/About_Us.html')
+
+def how_it_works(request):
+    return render(request, 'product/how_it_works.html')
   
