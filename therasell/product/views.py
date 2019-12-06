@@ -34,16 +34,13 @@ def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'product/product_detail.html', {'product': product})
 
-<<<<<<< HEAD
 def list_new(request):
     form=ListForm()
     return render(request,'product/list_product.html',{'form':form})
-=======
 
 def about_us(request):
     return render(request, 'product/About_Us.html')
 
 def how_it_works(request):
     return render(request, 'product/how_it_works.html')
->>>>>>> 276d5e64d5e9f43449382a9c1eb7bab4180cdc46
   
