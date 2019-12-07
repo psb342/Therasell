@@ -3,6 +3,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product
 from .forms import ListForm
 import base64
+from django.db.models import Q
+import operator
+from functools import reduce
 #import range
 
 
@@ -15,9 +18,19 @@ import base64
 def product_list(request):
   
     products = Product.objects.all()
+
+    query = request.GET.get('q')
+    if query:
+        query_list = query.split()
+        products = products.filter(reduce(operator.and_,
+                       (Q(title__icontains=q) for q in query_list)))# |
+              #  reduce(operator.and_,
+              #         (Q(product_description__icontains=q) for q in query_list)))
+        print(products)
     products_arr = []
-    for i in range(1,len(products)+1):
-        product = Product.objects.get(ID=i)
+    #for i in range(1,len(products)+1):
+    for product in products:
+       # product = Product.objects.get(product_id=i)
         product_obj = {
             'ID' : product.ID,
             'Title' : product.Title,
