@@ -1,78 +1,234 @@
 {% load static %}
 <html>
-    <head>
-        <title>TheraSELL</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-            <!-- Navbar start-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+
+<head>
+  <title>TheraSELL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <style>
+      /* Remove the navbar's default rounded borders and increase the bottom margin */
+      .navbar {
+        /*margin-bottom: 50px;*/
+        border-radius: 0;
+      }
+  
+      /* Remove the jumbotron's default bottom margin */
+      .jumbotron {
+        margin-bottom: 0;
+      }
+  
+      /*css for footer begin */
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+      }
+  
+      #footersubscribe {
+        display: block;
+      }
+  
+      /*css for footer end*/
+  
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+  
+      /* Carousel css start */
+  
+      .carousel-inner>.carousel-item>img {
+        margin: 0 auto;
+        width: 25%;
+        max-height: 200px;
+        height: auto;
+      }
+  
+  
+      .carousel-item {
+        text-align: left;
+        background-color: #757575;
+      }
+  
+      .carousel-control-next,
+      .carousel-control-prev {
+        filter: invert(100%);
+      }
+  
+      .carousel-caption {
+        right: 15%;
+        left: auto;
+        width: 40%;
+        top: 21%;
+      }
+  
+      .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+      }
+  
+      .caption-font {
+        font-size: 2.5vw;
+      }
+      /* Carousel css end */
+
+      /*css for card layout to be dynamic start*/
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/About_Us">About Us <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/how_it_works">How it works <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">List a product</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#" type="search">Pediatric</a>
-                <a class="dropdown-item" href="#">Geriatric</a>
-                <a class="dropdown-item" href="#">Sports injury</a>
-                <a class="dropdown-item" href="#">Sensory</a>
-                <a class="dropdown-item" href="#">Gross Motor</a>
-                <a class="dropdown-item" href="#">Fine motor</a>
-                <a class="dropdown-item" href="#">Wheel chairs</a>
-                <a class="dropdown-item" href="#">Mobility (walkers, Canes, crawlers, ramps)</a>
-                <a class="dropdown-item" href="#">Walkers and Fall Safety</a>
-                <a class="dropdown-item" href="#">Splints and braces</a>
-                <a class="dropdown-item" href="#">Activities of daily living</a>
-                <a class="dropdown-item" href="#">Durable medical equipment</a>
-                <a class="dropdown-item" href="#">Rehabilitation and Physical Therapy</a>
-                <a class="dropdown-item" href="#">Visual Motor/Visual Perceptual</a>
-                <a class="dropdown-item" href="#">Assessments</a>
-               <!--  <div class="dropdown-divider"></div>
-               <a class="dropdown-item" href="#">Settings</a> -->
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My Cart</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sign In</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+  @media (min-width:576px) {
+      .card-columns {
+        column-count: 2;
+      }
+  }
+    @media (min-width:768px) {
+      .card-columns {
+        column-count: 3;
+      }
+  }
+  @media (min-width:992px) {
+      .card-columns {
+        column-count: 4;
+      }
+  }
+  @media (min-width:1200px) {
+      .card-columns {
+        column-count: 6;
+      }
+  }
+
+  .grid-item { 
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+      /*css for card layout to be dynamic end*/
+    </style>
+
+</head>
+
+<body>
+
+  <!-- Carousel Start-->
+  {% load staticfiles %}
+  <div id="demo" class="carousel slide" data-ride="carousel" data-interval="10000">
+
+    <!-- Indicators -->
+    <!-- <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+  </ul> -->
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/image1.jpg' %}" alt="Image1"></img>
+        <div class="carousel-caption">
+          <h3 class="caption-font">The place to buy and sell used therapeutic equipment</h3>
         </div>
-      </nav>
-      <!-- Navbar end-->
-      
-                <div class="content container">
-                    <div class="row">
-                        <div class="col-md-8">
-                        {% block content %}
-                        {% endblock %}
-                        </div>
-                    </div>
-                </div>
-    </body>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/image2.jpg' %}" alt="Image2"></img>
+        <div class="carousel-caption">
+          <h3 class="caption-font">Helping each other sale by sale</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+  <!-- Carousel End-->
+
+
+  <!-- Navbar start-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/About_Us">About Us <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/how_it_works">How it works <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/list/new/">List a product</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Category
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" type="search">Pediatric</a>
+            <a class="dropdown-item" href="#">Geriatric</a>
+            <a class="dropdown-item" href="#">Sports injury</a>
+            <a class="dropdown-item" href="#">Sensory</a>
+            <a class="dropdown-item" href="#">Gross Motor</a>
+            <a class="dropdown-item" href="#">Fine motor</a>
+            <a class="dropdown-item" href="#">Wheel chairs</a>
+            <a class="dropdown-item" href="#">Mobility (walkers, Canes, crawlers, ramps)</a>
+            <a class="dropdown-item" href="#">Walkers and Fall Safety</a>
+            <a class="dropdown-item" href="#">Splints and braces</a>
+            <a class="dropdown-item" href="#">Activities of daily living</a>
+            <a class="dropdown-item" href="#">Durable medical equipment</a>
+            <a class="dropdown-item" href="#">Rehabilitation and Physical Therapy</a>
+            <a class="dropdown-item" href="#">Visual Motor/Visual Perceptual</a>
+            <a class="dropdown-item" href="#">Assessments</a>
+            <!--  <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="#">Settings</a> -->
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sign In</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!-- Navbar end-->
+
+  <div class="content container">
+    <div class="row">
+      <div class="col-md-8">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <!-- <footer class="container-fluid text-center footer">
+      <small>&copy; Copyright 2019, ThreaSELL</small>
+      <form class="form-inline" id="footersubscribe">Get deals:
+        <input type="email" class="form-control" size="50" placeholder="Email Address">
+        <button type="button" class="btn btn-danger">Sign Up</button>
+      </form>
+    </footer> -->
+
+</body>
+
 </html>

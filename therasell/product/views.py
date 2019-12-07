@@ -17,18 +17,24 @@ def product_list(request):
     products = Product.objects.all()
     products_arr = []
     for i in range(1,len(products)+1):
-        product = Product.objects.get(product_id=i)
+        product = Product.objects.get(ID=i)
         product_obj = {
-          'product_id' : product.product_id,
-          'title': product.title,
-          'product_description': product.product_description,
-          'Image' : base64.b64encode(product.Image).decode() if product.Image is not None else '',
-          'Price' : '100'
+            'ID' : product.ID,
+            'Title' : product.Title,
+            'Description' : product.Description,
+            'Category' : product.Category,
+            'Quantity' : product.Quantity,
+            'Size' : product.Size,
+            'Image' : base64.b64encode(product.Image).decode() if product.Image is not None else '',
+            'Brand' : product.Brand,
+            'Color' : product.Color,
+            'Condition' : product.Condition,    
+            'Seller' : product.Seller,
+            'Original_Price' : product.Original_Price,
+            'Listing_Price' :  product.Listing_Price
         }
         products_arr.append(product_obj)
     return render(request, 'product/product_list.html', {'products': products_arr})
-
-
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
