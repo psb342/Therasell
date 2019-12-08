@@ -54,7 +54,16 @@ def product_detail(request, pk):
     return render(request, 'product/product_detail.html', {'product': product})
 
 def list_new(request):
-    form=ListForm()
+    if request.method == "POST":
+        form = ListForm(request.POST)
+        if form.is_valid():
+            product = form.save(commit=False)
+            product.Seller = request.user
+            product.Posted_Date = timezone.now()
+            product.save()
+            return redirect('product_detail', pk=product.pk)
+    else:
+        form = ListForm()
     return render(request,'product/list_product.html',{'form':form})
 
 def about_us(request):
