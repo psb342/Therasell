@@ -23,7 +23,7 @@ def product_list(request):
     if query:
         query_list = query.split()
         products = products.filter(reduce(operator.and_,
-                       (Q(title__icontains=q) for q in query_list)))# |
+                       (Q(Title__icontains=q) for q in query_list)))# |
               #  reduce(operator.and_,
               #         (Q(product_description__icontains=q) for q in query_list)))
         print(products)
