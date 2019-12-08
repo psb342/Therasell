@@ -6,6 +6,8 @@ import base64
 from django.db.models import Q
 import operator
 from functools import reduce
+import datetime
+from django.shortcuts import redirect
 #import range
 
 
@@ -15,10 +17,8 @@ from functools import reduce
 #    products = Product.objects.all()
 #    return render(request, 'product/product_list.html', {'products': products})
 
-def product_list(request):
-  
+def product_list(request):  
     products = Product.objects.all()
-
     query = request.GET.get('q')
     if query:
         query_list = query.split()
@@ -26,7 +26,7 @@ def product_list(request):
                        (Q(Title__icontains=q) for q in query_list)))# |
               #  reduce(operator.and_,
               #         (Q(product_description__icontains=q) for q in query_list)))
-        print(products)
+        #print(products)
     products_arr = []
     #for i in range(1,len(products)+1):
     for product in products:
@@ -38,7 +38,7 @@ def product_list(request):
             'Category' : product.Category,
             'Quantity' : product.Quantity,
             'Size' : product.Size,
-            'Image' : base64.b64encode(product.Image).decode() if product.Image is not None else '',
+            'Image' :product.Image,
             'Brand' : product.Brand,
             'Color' : product.Color,
             'Condition' : product.Condition,    
@@ -55,11 +55,12 @@ def product_detail(request, pk):
 
 def list_new(request):
     if request.method == "POST":
-        form = ListForm(request.POST)
+        form = ListForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save(commit=False)
             product.Seller = request.user
-            product.Posted_Date = timezone.now()
+            product.Posted_Date = datetime.datetime.now()
+            product.Image = request.FILES['Image']
             product.save()
             return redirect('product_detail', pk=product.pk)
     else:

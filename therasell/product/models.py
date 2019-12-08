@@ -31,22 +31,22 @@ CATEGORIES = (
 ('Assessments','Assessments')
 )
 
-
 class Product(models.Model):
-
-    ID = models.IntegerField(primary_key = True)
+    ID = models.AutoField(primary_key=True)
+    #ID = models.IntegerField(primary_key = True)
     Title = models.CharField(max_length=50)
     Description = models.TextField()
     Category = models.CharField(choices=CATEGORIES, max_length=100)
     Quantity = models.IntegerField(validators=[MinValueValidator(0)],default=1)
     Size = models.CharField(max_length=10,blank=True,null=True)
-    Image = models.ImageField(upload_to = 'pic_folder/')
+    Image = models.ImageField()
     Brand = models.CharField(max_length=50,blank=True,null=True)
     Color = models.CharField(max_length=20,blank=True,null=True)
     Condition = models.CharField(choices=CONDITION, max_length=25)    
     Seller = models.TextField()
     Original_Price = models.CharField(max_length=10)
     Listing_Price = models.CharField(max_length=10)
+    Posted_Date = models.DateTimeField()
 
     # author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 

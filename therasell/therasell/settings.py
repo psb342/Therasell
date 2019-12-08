@@ -128,3 +128,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
                 os.path.join(BASE_DIR,'therasell/staticfiles'), # if your static files folder is named "staticfiles"
 )
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'therasell/media')
+MEDIA_URL = '/media/'

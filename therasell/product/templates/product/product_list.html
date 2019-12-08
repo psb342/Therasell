@@ -201,7 +201,7 @@ font-size: 2.5vw;
                   <div class="col-sm-3">
                   <div class="col-auto mb-2">
                       <div class="card" style="width: 15rem;">
-                           <img class="card-img-top" src="data:image/jpeg;base64,{{ product.Image }}" alt="Card image" style="width:100%">
+                           <img class="card-img-top" src="/media/{{product.Image}}" alt="Card image" style="width:100%">
                           <div class="card-body">
                               <h5 class="card-title"><a href="{% url 'product_detail' pk=product.ID %}">{{ product.Title }}</a></h5>
                               <!-- h6 class="card-subtitle mb-2 text-muted">Price : ${{ product.Price }}</h6-->
