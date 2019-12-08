@@ -3,10 +3,11 @@
 <head>
   <title>TheraSELL</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
   
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
@@ -93,55 +94,67 @@
 <!-- Navbar end-->
 
 <br><br><br><br><br>
+{% block content %}
 <div class = "container-fluid">
 <div class="row">
-	<aside class="col-sm-5">
+	<aside class="col-sm-4">
 
-        <div class="card" style = "width: 50rem;">
+        <div style = "width: 30rem;">
 
  
-            <article class="card-group-item">
+           
 
                     <img class="card-img-top" src="data:image/jpeg;base64,{{ product.Image }}" alt="Card image" style="width:100%">
 
 
-            </article>
+   
             
         </div>
 
 	</aside> <!-- col.// -->
-	<aside class="col-sm-6">
+	<aside class="col-sm-4">
 
 
 
-<div class="card" style = "width: 65rem;">
+<div style = "width: 40rem;">
 
  
-	<article class="card-group-item">
+
 	 
 
-{% block content %}
+
     <div class="product">
-        {% if product.published_date %}
-            <div class="date">
-                {{ product.published_date }}
-            </div>
-        {% endif %}
-        <h2>{{ product.title }}</h2>
-        <p>${{ product.price }}</p>
-        <p>{{ product.product_description }}</p>
+       
+        <h2>{{ product.Title }}</h2>
         <br>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buy</button>
+        <p>Condition : {{ product.Condition }}</p>
+        <p>Brand : {{ product.Brand }}</p>
+        <p>Listed Price : ${{ product.Listing_Price }}   &nbsp;&nbsp;&nbsp;&nbsp;  Original Price : ${{ product.Original_Price }}</p>
+        <p>Color : {{ product.Color }}</p>
+        <p>{{ product.Description }}</p>
+        <br>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buy</button> &nbsp;
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add to Cart</button>
+
     
     </div>
-{% endblock %}
+
+</aside>
+<aside class="col-sm-4">
+    <div style = "width: 30rem;">
+      <p>Seller Information : {{product.Seller}}</p>
+
+    </div>
+  </aside>
+
+</div>
 
 
 </div>
 
           
 </div><br><br>
-</article> 
+{% endblock %}
 </div>
 
 </body>
