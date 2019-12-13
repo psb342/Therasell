@@ -28,7 +28,8 @@ CATEGORIES = (
 ('Durable medical equipment','Durable medical equipment'),
 ('Rehabilitation and Physical Therapy','Rehabilitation and Physical Therapy'),
 ('Visual Motor/Visual Perceptual','Visual Motor/Visual Perceptual'),
-('Assessments','Assessments')
+('Assessments','Assessments'),
+('Other','Other')
 )
 
 class Product(models.Model):
