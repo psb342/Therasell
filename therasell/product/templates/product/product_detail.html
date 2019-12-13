@@ -1,177 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>TheraSELL</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+{% extends 'product/base.html' %}
 
-  
-  <style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-      /*margin-bottom: 50px;*/
-      border-radius: 0;
-    }
-    
-    /* Remove the jumbotron's default bottom margin */ 
-     .jumbotron {
-      margin-bottom: 0;
-    }
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-
-    #footersubscribe {
-      display: block;
-    }
-
-</style>
-</head>
-<body>
-
-
-    <!-- Navbar start-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/About_Us">About Us <span class="sr-only">(current)</span></a>
-            </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/how_it_works">How it works <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">List a product</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Category
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#" type="search">Pediatric</a>
-          <a class="dropdown-item" href="#">Geriatric</a>
-          <a class="dropdown-item" href="#">Sports injury</a>
-          <a class="dropdown-item" href="#">Sensory</a>
-          <a class="dropdown-item" href="#">Gross Motor</a>
-          <a class="dropdown-item" href="#">Fine motor</a>
-          <a class="dropdown-item" href="#">Wheel chairs</a>
-          <a class="dropdown-item" href="#">Mobility (walkers, Canes, crawlers, ramps)</a>
-          <a class="dropdown-item" href="#">Walkers and Fall Safety</a>
-          <a class="dropdown-item" href="#">Splints and braces</a>
-          <a class="dropdown-item" href="#">Activities of daily living</a>
-          <a class="dropdown-item" href="#">Durable medical equipment</a>
-          <a class="dropdown-item" href="#">Rehabilitation and Physical Therapy</a>
-          <a class="dropdown-item" href="#">Visual Motor/Visual Perceptual</a>
-          <a class="dropdown-item" href="#">Assessments</a>
-         <!--  <div class="dropdown-divider"></div>
-         <a class="dropdown-item" href="#">Settings</a> -->
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My Cart</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sign In</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-<!-- Navbar end-->
-
-<br><br><br><br><br>
 {% block content %}
-<div class = "container-fluid">
-<div class="row">
-	<aside class="col-sm-4">
-
-        <div style = "width: 30rem;">
-
- 
-           
-
-          <img class="card-img-top" src="/media/{{product.Image}}" alt="Card image" style="width:100%">
 
 
-   
-            
-        </div>
-
-	</aside> <!-- col.// -->
-	<aside class="col-sm-4">
-
-
-
-<div style = "width: 40rem;">
-
- 
-
-	 
-
-    <div class="product">
-       
-        <h2>{{ product.Title }}</h2>
-        <br>
-        <p>Condition : {{ product.Condition }}</p>
-        <p>Brand : {{ product.Brand }}</p>
-        <p>Listed Price : ${{ product.Listing_Price }}   &nbsp;&nbsp;&nbsp;&nbsp;  Original Price : ${{ product.Original_Price }}</p>
-        <p>Color : {{ product.Color }}</p>
-        <div class="dropdown show">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Quantity
-          </a>
-        
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          {% for val in product.Quantity %}
-              <a class="dropdown-item" href="#">{{ val }}</a>
-          {% endfor %}
-        </div>
-        </div>
-       
-
-<br>
-       
-        <p>{{ product.Description }}</p>
-        <br>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buy</button> &nbsp;
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add to Cart</button>
-
-    
-    </div>
-
-</aside>
-<aside class="col-sm-4">
-    <div style = "width: 30rem;">
-      <br><br><br><br>
-      <p>Seller Information : {{product.Seller}}</p>
-
-    </div>
-  </aside>
-
-</div>
-
-
-</div>
-
-          
 </div><br><br>
-{% endblock %}
+
+
+<div class="container">
+    <div class="card flex-row flex-wrap">
+        <div class="card-header border-0">
+            <img src="/media/{{product.Image}}" alt="">
+        </div>
+        <div class="card-block px-2">
+            <h4 class="card-title">{{ product.Title }}</h4>
+            <p class="card-text">Description : {{ product.Description }}</p>
+            <p class="card-text">Condition : {{ product.Condition }}</p>
+            <p class="card-text">Brand : {{ product.Brand }}</p>
+            <p class="card-text">Color : {{ product.Color }}</p>
+            <p class="card-text">Seller Information : {{product.Seller}}</p>
+            <p class="card-text">Original Price : ${{ product.Original_Price }}</p>
+            <p class="card-text">Listed Price : ${{ product.Listing_Price }}</p>
+            <!-- <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Quantity
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  {% for val in product.Quantity %}
+                  <a class="dropdown-item" href="#">{{ val }}</a>
+                  {% endfor %}
+                </div>
+              </div> -->
+            <br>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buy</button>
+        </div>
+        <div class="w-100"></div>
+    </div>
+    <br>
 </div>
 
-</body>
-</html>
+
+{% endblock %}
