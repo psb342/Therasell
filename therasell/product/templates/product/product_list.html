@@ -2,53 +2,23 @@
 
 {% block content %}
 
+</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <aside class="col-sm-2">
-
-    </aside> <!-- col.// -->
-    <aside class="col-sm-4">
-      <div class="card" style="width: 98rem;">
-
-
-        <article class="card-group-item">
-
-          <div class="row justify-content-center">
-            {% for product in products %}
-            <div class="col-sm-3">
-              <div class="col-auto mb-2">
-                <div class="card" style="width: 15rem;">
-                  <img class="card-img-top" src="/media/{{product.Image}}" alt="Card image" style="width:100%">
-                  <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'product_detail' pk=product.ID %}">{{ product.Title }}</a>
-                    </h5>
-                    <!-- h6 class="card-subtitle mb-2 text-muted">Price : ${{ product.Price }}</h6-->
-                    <h6 class="card-subtitle mb-2 text-muted">{{product.Listed_Price}}</h6>
-
-
-                  </div>
+<div class="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-sm-4 py-2">
+            <div class="card h-100 border-primary">
+                <div class="card-body">
+                    <img class="card-img-top" src="/media/{{product.Image}}" alt="Card image" style="width:100%" href="{% url 'product_detail' pk=product.ID %}">
+                    <h3 class="card-title"><a href="{% url 'product_detail' pk=product.ID %}">{{ product.Title }}</a></h3>
+                    <p class="card-text">{{product.Description}}</p>
+                    <a href="{% url 'product_detail' pk=product.ID %}" class="btn btn-outline-secondary">Details</a>
                 </div>
-              </div>
             </div>
-            {% endfor %}
-          </div>
+        </div>
+         {% endfor %}
 
-
-      </div><br><br>
-      </article>
-  </div> <!-- card.// -->
-
+    </div>
 </div>
-
-</aside> <!-- col.// -->
-</div>
-</div>
-
-
-
-
-</body>
-
-</html>
 {% endblock %}
