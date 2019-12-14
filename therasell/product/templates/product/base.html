@@ -10,7 +10,7 @@
 
         <style>
 
-    
+
     /* Remove the navbar's default rounded borders and increase the bottom margin */
     .navbar {
       /*margin-bottom: 50px;*/
@@ -88,13 +88,13 @@ font-size: 3.5vw;
  <!-- Carousel Start-->
  {% load staticfiles %}
  <div id="demo" class="carousel slide" data-ride="carousel" data-interval="10000">
- 
+
      <!-- Indicators -->
      <ul class="carousel-indicators">
        <li data-target="#demo" data-slide-to="0" class="active"></li>
        <li data-target="#demo" data-slide-to="1"></li>
      </ul>
- 
+
      <!-- The slideshow -->
      <div class="carousel-inner">
        <div class="carousel-item active">
@@ -116,7 +116,7 @@ font-size: 3.5vw;
              </div>
        </div>
      </div>
- 
+
      <!-- Left and right controls -->
      <a class="carousel-control-prev" href="#demo" data-slide="prev">
        <span class="carousel-control-prev-icon"></span>
@@ -134,7 +134,7 @@ font-size: 3.5vw;
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -184,19 +184,15 @@ font-size: 3.5vw;
         </div>
       </nav>
       <!-- Navbar end-->
-      
+
                 <div class="content container">
-                    <div class="row">
-                        <div class="col-md-8">
                         {% block content %}
                         {% endblock %}
-                        </div>
-                    </div>
                 </div>
-    
+
                 <footer class="container-fluid text-center footer">
                     <small>&copy; Copyright 2019, TheraSELL</small>
                 </footer>
-                
+
     </body>
 </html>
