@@ -1,3 +1,4 @@
+
 {% extends 'product/base.html' %}
 
 {% block content %}
@@ -33,12 +34,11 @@
                 </div>
               </div> -->
             <br>
-            <a class="btn btn-outline-success my-2 my-sm-0" type="submit" href = "{% url 'checkout'%}">Buy</a>
+            <a class="btn btn-outline-success my-2 my-sm-0" type="submit" href = "{% url 'checkout' p=product.Listing_Price %}">Buy</a>
         </div>
         <div class="w-100"></div>
     </div>
     <br>
 </div>
-
 
 {% endblock %}
