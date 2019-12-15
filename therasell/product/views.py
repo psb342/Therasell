@@ -79,5 +79,5 @@ def about_us(request):
 def how_it_works(request):
     return render(request, 'product/how_it_works.html')
   
-def checkout(request):
-    return render(request, 'product/Checkout.html')
+def checkout(request, p):
+    return render(request, 'product/Checkout.html', {'p':p})
