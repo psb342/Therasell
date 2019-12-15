@@ -29,6 +29,7 @@ CATEGORIES = (
 ('Rehabilitation and Physical Therapy','Rehabilitation and Physical Therapy'),
 ('Visual Motor/Visual Perceptual','Visual Motor/Visual Perceptual'),
 ('Assessments','Assessments'),
+('Pediatric','Pediatric'),
 ('Other','Other')
 )
 
@@ -43,7 +44,7 @@ class Product(models.Model):
     Image = models.ImageField()
     Brand = models.CharField(max_length=50,blank=True,null=True)
     Color = models.CharField(max_length=20,blank=True,null=True)
-    Condition = models.CharField(choices=CONDITION, max_length=25)    
+    Condition = models.CharField(choices=CONDITION, max_length=25)
     Seller = models.TextField()
     Original_Price = models.CharField(max_length=10)
     Listing_Price = models.CharField(max_length=10)
