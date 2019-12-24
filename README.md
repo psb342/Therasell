@@ -4,16 +4,14 @@
 
 ## Usage
 
-## Installing django-crispy-forms
+## Installing dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install latest stable version into your python environment using pip::
+Install latest stable version of django-crispy-forms into your python environment using pip::
 
     pip install django-crispy-forms
-
-## Installing django-crispy-forms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Install Pillow with pip:
+Install Pillow with pip:
 
     $ pip install Pillow
