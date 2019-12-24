@@ -11,7 +11,10 @@ Install latest stable version of django-crispy-forms into your python environmen
 
     pip install django-crispy-forms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Install Pillow with pip:
 
-    $ pip install Pillow
+     $ pip install Pillow
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
